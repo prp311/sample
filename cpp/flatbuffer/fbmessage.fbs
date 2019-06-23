@@ -1,0 +1,26 @@
+namespace FBMessageGen;
+
+table Header 
+{
+    senderId:string;
+}
+
+union UserMessage
+{
+    Register,
+}
+
+table FBMessage 
+{
+    header:Header;
+    userMessage:UserMessage;
+}
+
+table Register
+{
+    name:string;
+    ip:string;
+    port:int;
+}
+
+root_type FBMessage;
